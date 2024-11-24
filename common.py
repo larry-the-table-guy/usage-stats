@@ -198,6 +198,8 @@ aliases={
 	'Ogerpon-Wellspring': ['Ogerpon-Wellspring-Tera', 'Ogerponwellspringtera'],
 	'Terapagos': ['Terapagos-Terastal', 'Terapagosterastal', 'Terapagos-Stellar', 'Terapagosstellar']
 }
+reverseAliases = {alias: species for species, aliasList in aliases.items() for alias in aliasList}
+
 
 nonSinglesFormats = [
 	'battlespotdoubles',

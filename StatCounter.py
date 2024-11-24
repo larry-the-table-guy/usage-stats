@@ -134,10 +134,7 @@ for line in file:
 			for poke in battle[player]['team']:
 				#annoying alias shit
 				species = poke['species']
-				for alias in aliases:
-					if species in aliases[alias]:
-						species = alias
-						break
+				species = reverseAliases.get(species, species)
 
 				team.append(species)
 
@@ -200,11 +197,8 @@ for line in file:
 				if ['p1','p2'][i] not in weight:
 					continue
 				species = leads[i]
-				#annoying alias shit
-				for alias in aliases:
-					if species in aliases[alias]:
-						species = alias
-						break
+				species = reverseAliases.get(species, species)
+
 				if species not in leadCounter['raw'].keys():
 					leadCounter['raw'][species]=0.0
 					leadCounter['weighted'][species]=0.0
